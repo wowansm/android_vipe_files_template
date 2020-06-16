@@ -1,0 +1,1 @@
+xcopy "Viper" "c:\Program Files\Android\Android Studio\plugins\android\lib\templates\other\Viper" /s /y /i

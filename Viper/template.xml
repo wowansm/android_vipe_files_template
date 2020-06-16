@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<template
+    format="5"
+    revision="3"
+    name="Viper View with Presenter, Interactor and Model"
+    description="Creates a Fragment with Presenter, Interactor and Model."
+    minApi="7"
+    minBuildApi="8">
+
+    <category value="Fragment" />
+
+    <parameter
+        id="className"
+        name="Fragment Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragment"
+        help="The name of the fragment class to create" />
+
+    <parameter
+        id="layoutName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="blank_fragment"
+        suggest="fragment_${classToResource(className)}"
+        help="The name of the layout to create" />
+
+    <parameter
+        id="viewModelName"
+        name="ViewModel Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragmentModel"
+        suggest="${underscoreToCamelCase(classToResource(className))}FragmentModel"
+        help="The name of the ViewModel class to create" />
+		
+	<parameter
+        id="presenterName"
+        name="Presenter Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragmentPresenter"
+        suggest="${underscoreToCamelCase(classToResource(className))}FragmentPresenter"
+        help="The name of the Presenter class to create" />
+		
+	<parameter
+        id="interactorName"
+        name="Interactor Name"
+        type="string"
+        constraints="class|nonempty|unique"
+        default="BlankFragmentInteractor"
+        suggest="${underscoreToCamelCase(classToResource(className))}FragmentInteractor"
+        help="The name of the Interactor class to create" />
+
+    <thumbs>
+        <thumb>template_blank_fragment.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
